@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>gudangdata.org</title>
+    <style>
+      body { background-color: #111111; margin: 50px; width: 600px; }
+      h1 { font-family: sans-serif; font-weight: normal; color: #d0d0d0; }
+      p { font-family: sans-serif; font-weight: normal; color: #b9b9b9; }
+
+      .segera { color: #777777; font-size: small; vertical-align: super; }
+
+      div#summary {
+      }
+
+      div#display {
+        font-family: sans-serif; font-size: small; font-weight: normal; color: #777777;
+        min-height: 60px; text-align: center;
+      }
+
+      div#links img {
+        opacity: 0.5;
+      }
+
+      div#links img:hover {
+        opacity: 1;
+      }
+
+      div#copyright {
+      }
+
+    </style>
+
+    <script>
+      var chunks = [
+        "daftar provinsi",
+        "daftar kota/kabupaten",
+        "daftar kode telepon",
+        "daftar bank",
+        "daftar kode kartu kredit",
+        "daftar kecamatan",
+        "daftar hari raya/libur",
+        "daftar cuti bersama",
+        "daftar benua",
+        "daftar negara",
+        "daftar bahasa"
+      ]
+      var ms = 650
+
+      function display_chunk(i) {
+        chunk = chunks[i]
+        document.getElementById("display").innerHTML = chunk
+        j = i+1; if (j >= chunks.length) j=0
+        setTimeout("display_chunk("+j+")", ms)
+      }
+      setTimeout("display_chunk(0)", 0)
+    </script>
+  </head>
+
+  <body>
+    <div id="summary">
+      <h1>gudangdata.org <span class="segera">segera</span></h1>
+
+      <p>gudang data referensi terbuka+gratis yang berkaitan dengan indonesia
+      dan/atau untuk keperluan aplikasi bahasa indonesia.</p>
+    </div>
+
+    <div id="display">
+    </div>
+
+    <div id="links">
+      <a href="https://github.com/sharyanto/gudangdata"><img src="image/icon/github.png"></a>
+      <!-- link ke gudangapi.{com,org} -->
+    </div>
+
+    <div id="copyright">
+      <p>&copy; 2012 Steven Haryanto</p>
+    </div>
+
+  </body>
+</html>
